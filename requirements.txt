@@ -1,0 +1,7 @@
+catboost
+fastapi
+uvicorn
+pickle
+pydantic
+json
+gunicorn
