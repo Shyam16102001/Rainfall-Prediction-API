@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from pydantic import BaseModel
 import pickle
@@ -6,6 +7,17 @@ import json
 
 app = FastAPI()
 
+origins = ["*"]
+methods = ["*"]
+headers = ["*"]
+
+app.add_middleware(
+    CORSMiddleware, 
+    allow_origins = origins,
+    allow_credentials = True,
+    allow_methods = methods,
+    allow_headers = headers    
+)
 
 class model_input(BaseModel):
 
